@@ -1,15 +1,19 @@
 package pong1;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.beans.NamedArg;
 import javafx.scene.Scene;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.time.Duration;
 import java.util.EventListener;
+
 
 public class Pong1 extends Application {
 
