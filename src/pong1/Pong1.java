@@ -14,6 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.EventListener;
+import java.util.Random;
 
 public class Pong1 extends Application {
 
@@ -40,6 +41,13 @@ public class Pong1 extends Application {
     public interface EventHandler<T extends Event> extends EventListener {
         void handle(T event);
     }
+    private void initKula() {
+        Random lott = new Random();
+        x = lott.nextDouble()*ARENAWIDTH+ARENAX1;
+        y = lott.nextDouble()*ARENAHEIGHT+ARENAY1;
+        vx = 5+lott.nextDouble()*20;
+        vy= 5+lott.nextDouble()*20;
+    }
 
     private void run(GraphicsContext gc) {
         gc.setFill(Color.BLACK);
@@ -57,6 +65,7 @@ public class Pong1 extends Application {
 
     @Override
     public void start(Stage stage) {
+        initKula();
         Canvas canvas = new Canvas(WIDTH, HEIGHT);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
